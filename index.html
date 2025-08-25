@@ -33,7 +33,6 @@
       text-align: center;
       padding: 2rem 1rem;
       background: #006241;
-      /* Verde IFBA */
       color: #fff;
       border-bottom: 4px solid #00492f;
     }
@@ -60,7 +59,9 @@
 
     .controls {
       display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
+      justify-content: center;
       margin-bottom: 2rem;
     }
 
@@ -75,6 +76,9 @@
       cursor: pointer;
       transition: 0.3s ease;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      flex: 1;
+      min-width: 120px;
+      max-width: 200px;
     }
 
     button:hover {
@@ -93,6 +97,7 @@
       width: 100%;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       border-left: 6px solid #006241;
+      word-wrap: break-word;
     }
 
     .dark-mode .output {
@@ -114,6 +119,58 @@
       background: #1e1e1e;
       color: #ccc;
       border-top: 1px solid #333;
+    }
+
+    /* ----------------------------
+       RESPONSIVIDADE
+    -----------------------------*/
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+
+      header p {
+        font-size: 0.9rem;
+      }
+
+      .output {
+        font-size: 1rem;
+        padding: 1rem;
+      }
+
+      button {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.3rem;
+      }
+
+      header p {
+        font-size: 0.8rem;
+      }
+
+      main {
+        padding: 1rem;
+      }
+
+      .controls {
+        flex-direction: column;
+        gap: 0.8rem;
+        width: 100%;
+      }
+
+      button {
+        width: 100%;
+        max-width: none;
+      }
+
+      .output {
+        font-size: 0.95rem;
+      }
     }
   </style>
 </head>
